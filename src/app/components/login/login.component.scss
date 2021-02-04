@@ -1,0 +1,89 @@
+.container {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+
+  & > * {
+    width: 50%;
+  }
+
+  & > .left-section {
+    height: 100%;
+    position: relative;
+    background-image: url("../../../assets/images/backgroung_nse.jpg");
+    background-position: center;
+    background-size: cover;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #3a2d7d;
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      img {
+        height: 10rem;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .text-wrapper {
+        text-align: center;
+        margin-top: 2rem;
+
+        p {
+          margin-bottom: 1rem;
+          font-size: 2rem;
+          line-height: calc(2rem * 1.42857);
+          letter-spacing: 0.3rem;
+        }
+
+        h2 {
+          font-size: 4rem;
+          line-height: calc(4rem * 1.42857);
+        }
+
+
+      }
+    }
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
+
+  }
+
+  & > .right-section {
+
+    height: 100%;
+    color: #000;
+    overflow-y: hidden;
+
+    @media (max-width: 1023px) {
+      width: 60%;
+      margin: auto;
+    }
+
+    @media (max-width: 767px) {
+      width: 80%;
+    }
+
+
+  }
+}

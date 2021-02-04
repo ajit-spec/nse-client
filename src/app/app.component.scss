@@ -1,0 +1,40 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+
+  .sidenav-container {
+    height: 100%;
+    width: 100%;
+
+    .sidenav-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      max-width: 30rem;
+      padding: 1rem;
+
+      .nav-link {
+        text-decoration: none;
+        color: #A63D40 !important;
+        text-transform: capitalize;
+        text-align: left;
+
+        &:not(.dropdown)::after {
+          content: '';
+          display: block;
+          height: 3px;
+          background-color: #A63D40;
+          width: 0;
+          transition: all 1000ms 0ms ease-in-out;
+        }
+
+        &:not(.dropdown):hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

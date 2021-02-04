@@ -1,0 +1,34 @@
+.container {
+  padding: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3a2d7d;
+  color: #fff;
+
+  .logo-wrapper {
+    img {
+      width: 6rem;
+    }
+  }
+
+  .nav-links-wrapper {
+    display: flex;
+    align-items: center;
+
+    .nav-link {
+      text-decoration: none;
+      text-transform: capitalize;
+      font-weight: 500;
+      transition: all 1000ms 0ms ease-in-out;
+
+      &:hover,
+      &.active{
+        color: #fdb130 !important;
+      }
+
+    }
+  }
+
+}

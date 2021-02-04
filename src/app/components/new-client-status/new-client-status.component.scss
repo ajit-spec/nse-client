@@ -1,0 +1,35 @@
+.container {
+  padding: 1rem;
+}
+
+
+h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-bottom: 0 !important;
+  margin-top: 1rem !important;
+
+  &.heading-text {
+
+    span {
+      color: #fdb130;
+    }
+  }
+
+}
+
+.mat-paginator,
+button.mat-focus-indicator.mat-tooltip-trigger .mat-button-wrapper {
+  color: #000;
+}
+
+
+
+.primary-tooltip {
+  background-color: #3a2d7d;
+  color: #fff;
+  padding: 0 0.8rem;
+  font-size: 0.5rem;
+}

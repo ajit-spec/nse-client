@@ -1,0 +1,7 @@
+/*
+ * @name    Kpart
+ * @code    YpR3pZrsaKkC1CN97t5weiuivVRckdhj
+ * @cdate   2019-06-25 11:21:09
+ * @mdate   
+ */
+(function(w,d,c){(w[c]=w[c]||[]).push(function(){try{new VideoCapitan.Ads({partnerId:'9b12ffc1-f6fe-5bf1-9a41-eaf600418c5a',options:{fixedAlways:!0,fixedMaxWidth:420}})}catch(e){}});var tag=d.getElementsByTagName("script")[0],elem=d.createElement("script"),f=function(){tag.parentNode.insertBefore(elem,tag)};elem.type="text/javascript";elem.async=!0;elem.src="https://static.plovera.biz/vc.js?"+Math.random();if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",f,!1)}else{f()}})(window,document,'video_captain_callback')

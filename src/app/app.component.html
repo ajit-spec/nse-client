@@ -1,0 +1,40 @@
+<div class="container">
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav>
+
+      <div class="sidenav-wrapper">
+
+        <a [routerLink]="['/maker']" class="nav-link" mat-button>maker</a>
+        <a [routerLink]="['/checker']" class="nav-link" mat-button>checker</a>
+        <a [routerLink]="['/report']" class="nav-link" mat-button>report</a>
+        <a [routerLink]="['/maker']" class="nav-link" mat-button>client request</a>
+
+        <a [matMenuTriggerFor]="admin" class="nav-link dropdown" mat-button>
+          <span>Admin</span>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </a>
+        <mat-menu #admin="matMenu" xPosition="before">
+          <a mat-menu-item class="nav-link">Item 1</a>
+          <a mat-menu-item class="nav-link">Item 2</a>
+        </mat-menu>
+
+      </div>
+
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <div [ngStyle]="{
+          height: '100%'
+          }">
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+</div>
+

