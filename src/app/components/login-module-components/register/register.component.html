@@ -1,0 +1,100 @@
+<div class="register-wrapper">
+
+  <div class="top-section">
+
+    <h3>Register</h3>
+
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <mat-form-field appearance="outline" [color]="'primary'">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter your name" [formControlName]="'name'">
+        <mat-icon matPrefix>person</mat-icon>
+        <mat-error *ngIf="(form.get('name').touched) && form.get('name').hasError('required')">
+          <span>Name is required</span>
+          <mat-icon>report_problem</mat-icon>
+        </mat-error>
+        <mat-error *ngIf="(form.get('name').touched) && form.get('name').hasError('minlength')">
+          <span>Min 2 characters required</span>
+          <mat-icon>report_problem</mat-icon>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="outline" [color]="'primary'">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter your email" [formControlName]="'email'">
+        <mat-icon matPrefix>mail</mat-icon>
+        <mat-error *ngIf="(form.get('email').touched) && form.get('email').hasError('required')">
+          <span>Email is required</span>
+          <mat-icon>report_problem</mat-icon>
+        </mat-error>
+        <mat-error *ngIf="(form.get('email').touched) && form.get('email').hasError('notvalidemail')">
+          <span>Email is not valid</span>
+          <mat-icon>report_problem</mat-icon>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="outline" [color]="'primary'">
+        <mat-label>Contact</mat-label>
+        <input matInput placeholder="Enter your contact" [formControlName]="'contact'">
+        <mat-icon matPrefix>call</mat-icon>
+        <mat-error *ngIf="(form.get('contact').touched) && form.get('contact').hasError('required')">
+          <span>Contact no is required</span>
+          <mat-icon>report_problem</mat-icon>
+        </mat-error>
+        <mat-error *ngIf="(form.get('contact').touched) && form.get('contact').hasError('notvalidcontactno')">
+          <span>Contact no is not valid</span>
+          <mat-icon>report_problem</mat-icon>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="outline" [color]="'primary'">
+        <mat-label>Category</mat-label>
+        <mat-select [formControlName]="'category'" disableOptionCentering [panelClass]="'dropdown-position-bottom'">
+          <mat-option [value]="''">Select Category</mat-option>
+          <mat-option value="individual">Individual</mat-option>
+          <mat-option value="corporate">Corporate</mat-option>
+          <mat-option value="broker">Broker</mat-option>
+          <mat-option value="researcher">Researcher</mat-option>
+        </mat-select>
+        <mat-icon matPrefix>category</mat-icon>
+        <mat-error *ngIf="(form.get('category').touched) && form.get('category').hasError('required')">
+          <span>Pls select a category</span>
+          <mat-icon>report_problem</mat-icon>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button type="submit" mat-flat-button [ngStyle]="{
+        width: '100%'
+        }"
+            [disabled]="form.invalid">Register
+    </button>
+
+  </form>
+
+  <div class="bottom-section">
+    <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
+  </div>
+
+</div>
+
+
+<div class="error-wrapper" *ngIf="showerror">
+  <div class="left-section">
+    <mat-icon [color]="'warn'">cancel</mat-icon>
+  </div>
+  <div class="right-section">
+    <h3>Error</h3>
+    <p>{{errormsg}}</p>
+  </div>
+</div>

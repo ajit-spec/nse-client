@@ -1,0 +1,49 @@
+.register-wrapper {
+  height: 100%;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  animation-name: comp-switch-right;
+  animation-duration: 2000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.register-wrapper > .top-section h3 {
+  font-size: 1.5rem;
+  line-height: calc(1.5rem * 1.42857);
+  margin-bottom: 0;
+}
+.register-wrapper form {
+  margin-top: 2rem;
+  width: 100%;
+}
+.register-wrapper form .form-group {
+  margin-bottom: 1rem;
+}
+.register-wrapper form button[type=submit] {
+  margin-top: 1rem;
+  background-color: green !important;
+  color: #fff !important;
+  transition: all 1000ms 0ms ease-in-out;
+}
+.register-wrapper form button[type=submit].mat-button-disabled {
+  opacity: 0.5 !important;
+}
+.register-wrapper > .bottom-section {
+  margin-top: 1rem;
+  text-align: center;
+}
+.register-wrapper > .bottom-section p {
+  font-size: 0.9rem;
+  line-height: calc(0.9rem * 1.42857);
+}
+.register-wrapper > .bottom-section p a {
+  color: #3a2d7d;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=register.component.css.map */

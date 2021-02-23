@@ -1,23 +1,32 @@
 <div class="container">
 
+
+  <app-desktop-header
+    *ngIf="prop4.getloginuserdata()?.status && (prop4.getoption() === 'rta' || prop4.getoption() === 'historical') && !prop1.isSmallScreen && (!location.path().includes('login') && location.path() !== '/')"
+    (openNav)="sidenav.toggle()"></app-desktop-header>
+
+  <app-mobile-header
+    *ngIf="prop4.getloginuserdata()?.status && (prop4.getoption() === 'rta' || prop4.getoption() === 'historical') && prop1.isSmallScreen && (!location.path().includes('login') && location.path() !== '/')"
+    (openNav)="sidenav.toggle()"></app-mobile-header>
+
+<!--  <app-mobile-header-->
+<!--    (openNav)="sidenav.toggle()"></app-mobile-header>-->
+
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav>
 
       <div class="sidenav-wrapper">
 
-        <a [routerLink]="['/maker']" class="nav-link" mat-button>maker</a>
-        <a [routerLink]="['/checker']" class="nav-link" mat-button>checker</a>
-        <a [routerLink]="['/report']" class="nav-link" mat-button>report</a>
-        <a [routerLink]="['/maker']" class="nav-link" mat-button>client request</a>
-
-        <a [matMenuTriggerFor]="admin" class="nav-link dropdown" mat-button>
-          <span>Admin</span>
-          <mat-icon>keyboard_arrow_down</mat-icon>
+        <a class="nav-link" mat-button matPrefix
+           appDirective1 [option]="'rta'" [pointer]="sidenav">
+          <mat-icon>analytics</mat-icon>
+          <span>Real Time Data Analytics</span>
         </a>
-        <mat-menu #admin="matMenu" xPosition="before">
-          <a mat-menu-item class="nav-link">Item 1</a>
-          <a mat-menu-item class="nav-link">Item 2</a>
-        </mat-menu>
+        <a class="nav-link" mat-button
+           appDirective1 [option]="'historical'" [pointer]="sidenav">
+          <mat-icon>storage</mat-icon>
+          <span>Historical Data</span>
+        </a>
 
       </div>
 

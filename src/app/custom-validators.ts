@@ -70,4 +70,37 @@ export class CustomValidators {
 
   }
 
+  static validno(control: AbstractControl): { [prop: string]: boolean } | null {
+    const value = control.value;
+
+    if (value === '' || isNaN(value)) {
+      return ({
+        notno: true
+      });
+    }
+
+    return null;
+
+  }
+
+
+  static validgst(regexp: RegExp, error: ValidationErrors): (control: AbstractControl) => { [prop: string]: boolean } | null {
+
+    return (control: AbstractControl): { [prop: string]: boolean } | null => {
+
+      const gst = control.value;
+
+      if (gst) {
+        if (regexp.test(gst)) {
+          console.log('asd3e');
+          return null;
+        } else {
+          return error;
+        }
+      }
+
+    };
+
+  }
+
 }

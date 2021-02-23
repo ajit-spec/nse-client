@@ -1,0 +1,60 @@
+.login-wrapper {
+  height: 100%;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation-name: comp-switch-right;
+  animation-duration: 2000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.login-wrapper > .top-section img {
+  height: 6rem;
+}
+.login-wrapper > .top-section p {
+  font-size: 1rem;
+  line-height: calc(1rem * 1.42857);
+}
+.login-wrapper form {
+  margin-top: 1rem;
+  width: 100%;
+}
+.login-wrapper form .form-group {
+  margin-bottom: 1rem;
+}
+.login-wrapper form .forgot-pass-link {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+.login-wrapper form .forgot-pass-link a {
+  text-decoration: none;
+  color: #212121;
+  font-weight: 500;
+}
+.login-wrapper form button[type=submit] {
+  margin-top: 1rem;
+  background-color: green !important;
+  color: #fff !important;
+  transition: all 1000ms 0ms ease-in-out;
+}
+.login-wrapper form button[type=submit].mat-button-disabled {
+  opacity: 0.5 !important;
+}
+.login-wrapper > .bottom-section {
+  margin-top: 1rem;
+  text-align: center;
+}
+.login-wrapper > .bottom-section p {
+  font-size: 0.9rem;
+  line-height: calc(0.9rem * 1.42857);
+}
+.login-wrapper > .bottom-section p a {
+  color: #3a2d7d;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=signin.component.css.map */

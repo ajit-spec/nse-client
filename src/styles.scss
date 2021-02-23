@@ -1,22 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-html, body {
+html {
   height: 100%;
 }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .mat-typography {
+
+  font-size: 14px !important;
+
+
+  @media (max-width: 575px) {
+    font-size: 10px !important;
+  }
+
+
   h1,
   h2,
   h3,
@@ -37,6 +51,7 @@ body {
     .mat-form-field-wrapper {
 
       padding-bottom: 0;
+      margin: 0;
 
       .mat-form-field-flex {
 
@@ -48,10 +63,10 @@ body {
 
       .mat-form-field-subscript-wrapper {
         position: static;
+
       }
 
     }
-
 
     &:not(.mat-form-field-disabled) {
 
@@ -68,23 +83,23 @@ body {
               }
 
               .mat-form-field-outline-start {
-                border-top-color: #212121;
-                border-left-color: #212121;
-                border-bottom-color: #212121;
+                border-top-color: #212121 !important;
+                border-left-color: #212121 !important;
+                border-bottom-color: #212121 !important;
                 transition: all 500ms 0ms ease-in-out;
 
               }
 
               .mat-form-field-outline-gap {
-                border-bottom-color: #212121;
+                border-bottom-color: #212121 !important;
                 transition: all 500ms 0ms ease-in-out;
 
               }
 
               .mat-form-field-outline-end {
-                border-top-color: #212121;
-                border-bottom-color: #212121;
-                border-right-color: #212121;
+                border-top-color: #212121 !important;
+                border-bottom-color: #212121 !important;
+                border-right-color: #212121 !important;
                 transition: all 500ms 0ms ease-in-out;
 
               }
@@ -95,7 +110,7 @@ body {
             .mat-form-field-suffix {
               .mat-icon,
               .mat-datepicker-toggle {
-                color: #212121;
+                color: #212121 !important;
                 transition: all 500ms 0ms ease-in-out;
               }
             }
@@ -103,18 +118,32 @@ body {
             .mat-form-field-infix {
 
               .mat-input-element {
-                color: #212121;
+                color: #212121 !important;
                 transition: all 500ms 0ms ease-in-out;
 
               }
 
               .mat-form-field-label-wrapper {
                 .mat-form-field-label {
-                  color: #212121;
-
+                  color: #212121 !important;
                   transition: all 500ms 0ms ease-in-out;
 
                 }
+              }
+
+              .mat-select {
+                .mat-select-trigger {
+                  .mat-select-value,
+                  .mat-select-arrow-wrapper .mat-select-arrow {
+                    color: #212121 !important;
+                  }
+                }
+              }
+            }
+
+            .mat-form-field-suffix {
+              .mat-datepicker-toggle {
+                color: #212121 !important;
               }
             }
 
@@ -124,38 +153,44 @@ body {
               .mat-form-field-suffix {
                 .mat-icon,
                 .mat-datepicker-toggle {
-                  color: #3a2d7d;
+                  color: #3a2d7d !important;
                 }
               }
 
               .mat-form-field-infix {
                 .mat-input-element {
-                  color: #3a2d7d;
+                  color: #3a2d7d !important;
                 }
 
                 .mat-form-field-label-wrapper {
                   .mat-form-field-label {
-                    color: #3a2d7d;
+                    color: #3a2d7d !important;
                   }
+                }
+              }
+
+              .mat-form-field-suffix {
+                .mat-datepicker-toggle {
+                  color: #212121 !important;
                 }
               }
 
               .mat-form-field-outline {
 
                 .mat-form-field-outline-start {
-                  border-top-color: #3a2d7d;
-                  border-left-color: #3a2d7d;
-                  border-bottom-color: #3a2d7d;
+                  border-top-color: #3a2d7d !important;
+                  border-left-color: #3a2d7d !important;
+                  border-bottom-color: #3a2d7d !important;
                 }
 
                 .mat-form-field-outline-gap {
-                  border-bottom-color: #3a2d7d;
+                  border-bottom-color: #3a2d7d !important;
                 }
 
                 .mat-form-field-outline-end {
-                  border-top-color: #3a2d7d;
-                  border-bottom-color: #3a2d7d;
-                  border-right-color: #3a2d7d;
+                  border-top-color: #3a2d7d !important;
+                  border-bottom-color: #3a2d7d !important;
+                  border-right-color: #3a2d7d !important;
                 }
 
               }
@@ -168,44 +203,254 @@ body {
 
       }
 
-      &.mat-form-field-invalid {
+      &.mat-form-field-valid {
+
+        .mat-form-field-wrapper {
+
+          .mat-form-field-flex {
+
+            .mat-form-field-outline {
+
+              &.mat-form-field-outline-thick {
+                opacity: 1;
+              }
+
+              .mat-form-field-outline-start {
+                border-top-color: green !important;
+                border-left-color: green !important;
+                border-bottom-color: green !important;
+                transition: all 500ms 0ms ease-in-out;
+
+              }
+
+              .mat-form-field-outline-gap {
+                border-bottom-color: green !important;
+                transition: all 500ms 0ms ease-in-out;
+
+              }
+
+              .mat-form-field-outline-end {
+                border-top-color: green !important;
+                border-bottom-color: green !important;
+                border-right-color: green !important;
+                transition: all 500ms 0ms ease-in-out;
+
+              }
+
+            }
+
+            .mat-form-field-prefix,
+            .mat-form-field-suffix {
+              .mat-icon,
+              .mat-datepicker-toggle {
+                color: green !important;
+                transition: all 500ms 0ms ease-in-out;
+              }
+            }
+
+            .mat-form-field-infix {
+
+              .mat-input-element {
+                color: green !important;
+                transition: all 500ms 0ms ease-in-out;
+
+              }
+
+              .mat-form-field-label-wrapper {
+                .mat-form-field-label {
+                  color: green !important;
+
+                  transition: all 500ms 0ms ease-in-out;
+
+                }
+              }
+
+              .mat-select {
+                .mat-select-trigger {
+                  .mat-select-value,
+                  .mat-select-arrow-wrapper .mat-select-arrow {
+                    color: green !important;
+                  }
+                }
+              }
+
+            }
+
+            .mat-form-field-suffix {
+              .mat-datepicker-toggle {
+                color: green !important;
+              }
+            }
+
+            &:hover {
+
+              .mat-form-field-prefix,
+              .mat-form-field-suffix {
+                .mat-icon,
+                .mat-datepicker-toggle {
+                  color: green !important;
+                }
+              }
+
+              .mat-form-field-infix {
+                .mat-input-element {
+                  color: green !important;
+                }
+
+                .mat-form-field-label-wrapper {
+                  .mat-form-field-label {
+                    color: green !important;
+                  }
+                }
+              }
+
+              .mat-form-field-suffix {
+                .mat-datepicker-toggle {
+                  color: green !important;
+                }
+              }
+
+              .mat-form-field-outline {
+
+                .mat-form-field-outline-start {
+                  border-top-color: green !important;
+                  border-left-color: green !important;
+                  border-bottom-color: green !important;
+                }
+
+                .mat-form-field-outline-gap {
+                  border-bottom-color: green !important;
+                }
+
+                .mat-form-field-outline-end {
+                  border-top-color: green !important;
+                  border-bottom-color: green !important;
+                  border-right-color: green !important;
+                }
+
+              }
+
+            }
+
+          }
+
+          .mat-form-field-subscript-wrapper {
+            margin: 0;
+
+          }
+
+        }
+
+      }
+
+      &.mat-form-field-invalid,
+      &.mat-form-field-invalid1 {
         .mat-form-field-wrapper {
           .mat-form-field-flex {
 
             .mat-form-field-prefix,
             .mat-form-field-suffix {
               .mat-icon {
-                color: #cb0505;
+                color: #cb0505 !important;
               }
             }
 
             .mat-form-field-infix {
               .mat-input-element {
-                color: #cb0505;
+                color: #cb0505 !important;
               }
 
               .mat-form-field-label-wrapper {
                 .mat-form-field-label {
-                  color: #cb0505;
+                  color: #cb0505 !important;
                 }
+              }
+
+              .mat-select {
+                .mat-select-trigger {
+                  .mat-select-value,
+                  .mat-select-arrow-wrapper .mat-select-arrow {
+                    color: #cb0505 !important;
+                  }
+                }
+              }
+            }
+
+            .mat-form-field-suffix {
+              .mat-datepicker-toggle {
+                color: #cb0505 !important;
               }
             }
 
             .mat-form-field-outline {
               .mat-form-field-outline-start {
-                border-top-color: #cb0505;
-                border-left-color: #cb0505;
-                border-bottom-color: #cb0505;
+                border-top-color: #cb0505 !important;
+                border-left-color: #cb0505 !important;
+                border-bottom-color: #cb0505 !important;
               }
 
               .mat-form-field-outline-gap {
-                border-bottom-color: #cb0505;
+                border-bottom-color: #cb0505 !important;
               }
 
               .mat-form-field-outline-end {
-                border-top-color: #cb0505;
-                border-bottom-color: #cb0505;
-                border-right-color: #cb0505;
+                border-top-color: #cb0505 !important;
+                border-bottom-color: #cb0505 !important;
+                border-right-color: #cb0505 !important;
+              }
+            }
+
+            &:hover {
+              .mat-form-field-prefix,
+              .mat-form-field-suffix {
+                .mat-icon {
+                  color: #cb0505 !important;
+                }
+              }
+
+              .mat-form-field-infix {
+                .mat-input-element {
+                  color: #cb0505 !important;
+                }
+
+                .mat-form-field-label-wrapper {
+                  .mat-form-field-label {
+                    color: #cb0505 !important;
+                  }
+                }
+
+                .mat-select {
+                  .mat-select-trigger {
+                    .mat-select-value,
+                    .mat-select-arrow-wrapper .mat-select-arrow {
+                      color: #cb0505 !important;
+                    }
+                  }
+                }
+              }
+
+              .mat-form-field-suffix {
+                .mat-datepicker-toggle {
+                  color: #cb0505 !important;
+                }
+              }
+
+              .mat-form-field-outline {
+                .mat-form-field-outline-start {
+                  border-top-color: #cb0505 !important;
+                  border-left-color: #cb0505 !important;
+                  border-bottom-color: #cb0505 !important;
+                }
+
+                .mat-form-field-outline-gap {
+                  border-bottom-color: #cb0505 !important;
+                }
+
+                .mat-form-field-outline-end {
+                  border-top-color: #cb0505 !important;
+                  border-bottom-color: #cb0505 !important;
+                  border-right-color: #cb0505 !important;
+                }
               }
             }
 
@@ -219,9 +464,6 @@ body {
               justify-content: space-between;
               align-items: center;
 
-              .mat-icon {
-                font-size: 1.5rem;
-              }
             }
 
           }
@@ -237,18 +479,27 @@ body {
             .mat-form-field-prefix,
             .mat-form-field-suffix {
               .mat-icon {
-                color: #3a2d7d;
+                color: #3a2d7d !important;
               }
             }
 
             .mat-form-field-infix {
               .mat-input-element {
-                color: #3a2d7d;
+                color: #3a2d7d !important;
               }
 
               .mat-form-field-label-wrapper {
                 .mat-form-field-label {
-                  color: #3a2d7d;
+                  color: #3a2d7d !important;
+                }
+              }
+
+              .mat-select {
+                .mat-select-trigger {
+                  .mat-select-value,
+                  .mat-select-arrow-wrapper .mat-select-arrow {
+                    color: #3a2d7d !important;
+                  }
                 }
               }
             }
@@ -256,20 +507,20 @@ body {
             .mat-form-field-outline {
 
               .mat-form-field-outline-start {
-                border-top-color: #3a2d7d;
-                border-left-color: #3a2d7d;
-                border-bottom-color: #3a2d7d;
+                border-top-color: #3a2d7d !important;
+                border-left-color: #3a2d7d !important;
+                border-bottom-color: #3a2d7d !important;
               }
 
               .mat-form-field-outline-gap {
-                border-bottom-color: #3a2d7d;
+                border-bottom-color: #3a2d7d !important;
                 border-top-color: transparent;
               }
 
               .mat-form-field-outline-end {
-                border-top-color: #3a2d7d;
-                border-bottom-color: #3a2d7d;
-                border-right-color: #3a2d7d;
+                border-top-color: #3a2d7d !important;
+                border-bottom-color: #3a2d7d !important;
+                border-right-color: #3a2d7d !important;
               }
 
             }
@@ -289,38 +540,48 @@ body {
           .mat-form-field-suffix {
             .mat-icon,
             .mat-datepicker-toggle {
-              color: #9e9e9e;
+              color: #333 !important;
             }
           }
 
           .mat-form-field-infix {
 
             .mat-input-element {
-              color: #9e9e9e;
+              color: #333 !important;
             }
 
             .mat-form-field-label-wrapper {
               .mat-form-field-label {
-                color: #9e9e9e;
+                color: #333 !important;
               }
             }
+
+            .mat-select {
+              .mat-select-trigger {
+                .mat-select-value,
+                .mat-select-arrow-wrapper .mat-select-arrow {
+                  color: #333 !important;
+                }
+              }
+            }
+
           }
 
           .mat-form-field-outline {
             .mat-form-field-outline-start {
-              border-top-color: #9e9e9e;
-              border-left-color: #9e9e9e;
-              border-bottom-color: #9e9e9e;
+              border-top-color: #333 !important;
+              border-left-color: #333 !important;
+              border-bottom-color: #333 !important;
             }
 
             .mat-form-field-outline-gap {
-              border-bottom-color: #9e9e9e;
+              border-bottom-color: #333 !important;
             }
 
             .mat-form-field-outline-end {
-              border-top-color: #9e9e9e;
-              border-bottom-color: #9e9e9e;
-              border-right-color: #9e9e9e;
+              border-top-color: #333 !important;
+              border-bottom-color: #333 !important;
+              border-right-color: #333 !important;
             }
           }
 
@@ -344,7 +605,7 @@ body {
       }
 
       .mat-form-field-underline {
-        background-color: #212121;
+        background-color: #212121 !important;
       }
 
     }
@@ -356,9 +617,13 @@ body {
 
 
 .mat-checkbox {
+  .mat-checkbox-label {
+    color: #212121;
+  }
+
   &.mat-checkbox-disabled {
     .mat-checkbox-label {
-      color: #757575;
+      color: #333;
     }
   }
 }
@@ -366,7 +631,7 @@ body {
 .mat-select {
   &.mat-select-disabled {
     .mat-select-value {
-      color: #757575;
+      color: #333;
     }
   }
 }
@@ -445,5 +710,231 @@ body {
     margin-bottom: 0;
     padding: 0.2rem 0.5rem;
     font-size: 0.6rem;
+  }
+}
+
+.error-wrapper,
+.success-wrapper {
+  color: #212121;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  animation-name: alert-popup;
+  animation-duration: 5000ms;
+  animation-iteration-count: 1;
+  animation-delay: 0ms;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  & > .right-section {
+    margin-left: 0.5rem;
+
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 0.7rem;
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.error-wrapper {
+  background-color: #efb4b4;
+  border-bottom: 2px solid #cb0505;
+
+  & > .right-section {
+    h3 {
+      color: #cb0505;
+    }
+  }
+}
+
+.success-wrapper {
+  background-color: #99ff99;
+  border-bottom: 2px solid green;
+
+  & > .right-section {
+    h3 {
+      color: green;
+    }
+  }
+
+  & > .left-section {
+    .mat-icon {
+      color: green;
+    }
+  }
+}
+
+re-captcha {
+
+  @media (max-width: 575px) {
+    display: block;
+    transform: scale(0.8);
+    width: 0;
+  }
+
+}
+
+.dropdown-position-bottom {
+  margin-top: 1.5rem;
+}
+
+.mat-select-panel-wrap {
+  .mat-select-panel {
+    .mat-option {
+      &:hover {
+        background-color: #c4c0d8 !important;
+      }
+    }
+  }
+}
+
+.mat-success,
+.custom-mat-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  letter-spacing: 1.5px;
+  font-size: 75%;
+  animation-name: input-success;
+  animation-duration: 500ms;
+  animation-delay: 0ms;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.mat-success {
+  color: green;
+}
+
+.custom-mat-error {
+  color: #cb0505;
+}
+
+.mat-accordion {
+  .mat-expansion-panel {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+
+    .mat-expansion-panel-header {
+
+      background-color: #3a2d7d !important;
+      padding-right: 0 !important;
+
+      .mat-content {
+        align-items: center;
+
+        .mat-expansion-panel-header-title {
+          h2 {
+            margin-bottom: 0;
+            color: #fff;
+            font-size: 1rem;
+          }
+        }
+
+        .mat-expansion-panel-header-description {
+          flex-grow: 1;
+          display: flex;
+          justify-content: flex-end;
+
+          .mat-icon {
+            color: #fff;
+          }
+        }
+      }
+
+      .mat-expansion-indicator {
+        display: none;
+
+        &::after {
+          color: #fff;
+        }
+      }
+
+      &:hover
+      &.mat-expanded:hover {
+        background-color: #3a2d7d !important;
+
+      }
+    }
+
+    .mat-expansion-panel-content {
+      border-left: 1px solid #3a2d7d;
+      border-right: 1px solid #3a2d7d;
+
+      .mat-expansion-panel-body {
+        padding: 0 !important;
+      }
+    }
+
+    &:last-child {
+      .mat-expansion-panel-content {
+        border-bottom: 1px solid #3a2d7d;
+      }
+    }
+  }
+
+  .mat-expansion-panel-spacing {
+    margin: 0 !important;
+  }
+}
+
+.material-icons {
+  font-size: 1.3rem !important;
+}
+
+
+@keyframes input-success {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes comp-switch-right {
+  0% {
+    transform: translateX(10rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes alert-popup {
+  0% {
+    transform: translateX(10rem);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10rem);
+  }
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

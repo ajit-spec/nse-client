@@ -1,0 +1,207 @@
+.main-wrapper {
+  padding: 2rem 0;
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 2px solid #3a2d7d;
+    border-radius: 0.5rem;
+
+    form {
+
+      #personal-details-wrapper,
+      #market-segment-wrapper,
+      #payment-details-wrapper,
+      #add-subscription-details-wrapper,
+      #doc-type-wrapper {
+        margin-bottom: 1rem;
+
+        h2 {
+          font-size: 1.2rem;
+          margin-bottom: 0;
+        }
+
+        #verified-wrapper {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+
+          h2 {
+            margin-right: 2rem;
+          }
+
+          .not-verified,
+          .verified {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.3rem 1rem;
+            border-radius: 5px;
+
+            h3 {
+              margin-bottom: 0 !important;
+              margin-top: 0 !important;
+              font-size: 0.9rem;
+              text-decoration: none;
+            }
+          }
+
+          .not-verified {
+            background-color: #fdb130;
+            color: #000;
+          }
+
+          .verified {
+            background-color: green;
+            color: #fff;
+          }
+        }
+
+        #personal-details,
+        #market-segment,
+        #payment-details,
+        #doc-type{
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+
+          & > * {
+            width: 33%;
+            padding: 0 1rem 1rem;
+
+            @media (max-width: 1023px) {
+              width: 50%;
+            }
+
+            @media (max-width: 575px) {
+              width: 100%;
+            }
+          }
+        }
+
+        #market-segment,
+        #payment-details,
+        #add-subscription-details,
+        {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+
+          & > * {
+            width: 16.66%;
+            padding: 0 1rem 1rem;
+
+            @media (max-width: 1023px) {
+              width: 50%;
+            }
+
+            @media (max-width: 575px) {
+              width: 100%;
+            }
+          }
+        }
+
+        #doc-type {
+          align-items: flex-start;
+        }
+
+
+      }
+
+      .file-download-wrapper {
+        display: flex;
+        align-items: center;
+
+        .mat-form-field {
+          margin-right: 1rem;
+          flex-grow: 1;
+        }
+
+        button {
+
+          .mat-icon {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      #button-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+
+      }
+
+      .custom-file {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: calc(2.25rem + 2px);
+        margin: 5px 1rem 0;
+
+        .custom-file-input {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          height: calc(2.25rem + 2px);
+          margin: 0;
+          opacity: 0;
+        }
+
+        .custom-file-label {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: 1;
+          height: calc(2.25rem + 2px);
+          padding: .375rem .75rem;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          border: 2px solid #212121;
+          border-radius: .25rem;
+          display: inline-block;
+
+          &::after {
+            position: absolute;
+            top: -1px;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            display: block;
+            padding: .375rem .75rem;
+            line-height: 1.5;
+            color: #fff;
+            content: "Browse";
+            background-color: #3a2d7d;
+            cursor: pointer;
+          }
+        }
+
+        .invalid-feedback {
+          position: absolute;
+          left: 0;
+          color: #cb0505;
+        }
+      }
+
+
+    }
+
+    @media (max-width: 767px) {
+      padding: 1rem;
+    }
+
+  }
+}
+
+

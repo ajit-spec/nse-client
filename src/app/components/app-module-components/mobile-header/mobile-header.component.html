@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="logo-wrapper">
+
+    <button mat-icon-button (click)="openNav.emit()">
+      <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
+
+    <img src="../../../../assets/images/nse-logo.jpg" alt="NSE India" title="NSE India, National Stock Exchange">
+
+
+  </div>
+
+  <nav class="nav-links-wrapper">
+
+    <a [matMenuTriggerFor]="adminName" class="nav-link dropdown" mat-button>
+      <span>Tina</span>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </a>
+    <mat-menu #adminName="matMenu" xPosition="before">
+      <a [routerLink]="['/rta', 'client']" [queryParams]="{
+      edit: true
+      }" class="nav-link" mat-menu-item [routerLinkActive]="'active'">Edit Details</a>
+      <a [routerLink]="['/rta', 'client', 'status']" class="nav-link" mat-menu-item [routerLinkActive]="'active'">Status</a>
+      <a mat-menu-item class="nav-link" [routerLink]="['/login', 'change-password']" [routerLinkActive]="'active'">Change Password</a>
+      <a mat-menu-item class="nav-link" [routerLinkActive]="'active'">Logout</a>
+    </mat-menu>
+
+  </nav>
+
+</div>

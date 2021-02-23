@@ -1,0 +1,67 @@
+.main-wrapper {
+  padding: 2rem 0 1rem 0;
+}
+.main-wrapper .container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  border: 2px solid #3a2d7d;
+  border-radius: 0.5rem;
+}
+.main-wrapper .container #personal-details-wrapper,
+.main-wrapper .container #market-segment-wrapper,
+.main-wrapper .container #payment-details-wrapper,
+.main-wrapper .container #doc-type-wrapper {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-wrapper .container #personal-details-wrapper > .box,
+.main-wrapper .container #market-segment-wrapper > .box,
+.main-wrapper .container #payment-details-wrapper > .box,
+.main-wrapper .container #doc-type-wrapper > .box {
+  width: 48%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.main-wrapper .container #personal-details-wrapper > .box > *,
+.main-wrapper .container #market-segment-wrapper > .box > *,
+.main-wrapper .container #payment-details-wrapper > .box > *,
+.main-wrapper .container #doc-type-wrapper > .box > * {
+  width: 48%;
+}
+.main-wrapper .container #personal-details-wrapper > .box .left-section h3,
+.main-wrapper .container #market-segment-wrapper > .box .left-section h3,
+.main-wrapper .container #payment-details-wrapper > .box .left-section h3,
+.main-wrapper .container #doc-type-wrapper > .box .left-section h3 {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+.main-wrapper .container #personal-details-wrapper > .box .right-section p,
+.main-wrapper .container #market-segment-wrapper > .box .right-section p,
+.main-wrapper .container #payment-details-wrapper > .box .right-section p,
+.main-wrapper .container #doc-type-wrapper > .box .right-section p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  .main-wrapper .container #personal-details-wrapper > .box,
+.main-wrapper .container #market-segment-wrapper > .box,
+.main-wrapper .container #payment-details-wrapper > .box,
+.main-wrapper .container #doc-type-wrapper > .box {
+    width: 100%;
+  }
+}
+.main-wrapper .container #button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/*# sourceMappingURL=new-client-confirm.component.css.map */

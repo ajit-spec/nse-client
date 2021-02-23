@@ -1,0 +1,267 @@
+<div class="main-wrapper" *ngIf="userdetails">
+  <div class="container">
+
+    <div id="personal-details-wrapper">
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>name:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.name !== '-' && userdetails.name) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>email:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.email !== '-' && userdetails.email) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>category:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.category !== '-' && userdetails.category) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>organization:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.organization !== '-' && userdetails.organization) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>gst:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.gst !== '-' && userdetails.gst) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>contact:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{((userdetails.contact !== '-' && userdetails.contact) || 'N.A')}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>alternate contact:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails["alt-contact"] !== '-' && userdetails["alt-contact"]) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>state:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.state !== '-' && userdetails.state) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>country:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.country !== '-' && userdetails.country) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>address:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.address !== '-' && userdetails.address) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="market-segment-wrapper">
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>market segments:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails["market-segments"].toString() !== '-' && userdetails["market-segments"].toString()) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>FO DateTimeFrame:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.fodtf !== '-' && userdetails.fodtf) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>CM DateTimeFrame:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.cmdtf !== '-' && userdetails.cmdtf) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>GREEKS DateTimeFrame:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.greekdtf !== '-' && userdetails.greekdtf) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="payment-details-wrapper">
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>payment date:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails['payment-date'].toLocaleString().split(',')[0] !== '-' && userdetails['payment-date'].toLocaleString().split(',')[0]) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>payment UTR:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails['payment-utr'] !== '-' && userdetails['payment-utr']) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>current:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails.currency !== '-' && userdetails.currency) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>Payment Amount:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails["payment-amt"] !== '-' && userdetails["payment-amt"]) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="doc-type-wrapper">
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>file name:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails["file-name"] !== '-' && userdetails["file-name"]) || (prop3.existingfile !== '-' && prop3.existingfile) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+      <div class="box">
+
+        <div class="left-section">
+          <h3>file category:</h3>
+        </div>
+        <div class="right-section">
+          <p>{{(userdetails["file-category"] !== '-' && userdetails["file-category"]) || 'N.A'}}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="button-wrapper">
+
+      <button mat-raised-button [color]="'primary'" type="button" (click)="onSubmit()">Submit</button>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="error-wrapper" *ngIf="showerror">
+  <div class="left-section">
+    <mat-icon [color]="'warn'">cancel</mat-icon>
+  </div>
+  <div class="right-section">
+    <h3>Error</h3>
+    <p>{{errormsg}}</p>
+  </div>
+</div>
+
+<div class="success-wrapper" *ngIf="showsuccess">
+  <div class="left-section">
+    <mat-icon>check_circle</mat-icon>
+  </div>
+  <div class="right-section">
+    <h3>Success</h3>
+    <p>{{successmsg}}</p>
+  </div>
+</div>

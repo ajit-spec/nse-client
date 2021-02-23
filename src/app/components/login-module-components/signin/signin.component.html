@@ -1,0 +1,75 @@
+<div class="login-wrapper">
+
+  <div class="top-section">
+    <img src="../../../../assets/images/nse-logo.jpg" alt="nse-logo">
+    <p>Sign in to continue</p>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <mat-form-field appearance="outline" [color]="'primary'">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter your email" [formControlName]="'email'">
+        <mat-icon matPrefix>email</mat-icon>
+        <mat-error *ngIf="(form.get('email').touched) && form.get('email').hasError('required')">
+          <span>email is required</span>
+          <mat-icon>report_problem</mat-icon>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="outline" [color]="'primary'">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Enter your password" [type]="showPassword ? 'text' : 'password'" [formControlName]="'password'">
+        <mat-icon matPrefix>lock</mat-icon>
+        <button mat-icon-button matSuffix (click)="showPassword = !showPassword" type="button">
+          <mat-icon>{{showPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="(form.get('password').touched) && form.get('password').hasError('required')">
+          <span>password is required</span>
+          <mat-icon>report_problem</mat-icon>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <re-captcha
+        (resolved)="resolved($event)"
+        (error)="errored()"
+        errorMode="handled"
+        [siteKey]="'6Lc9VkwaAAAAANTqOfIfoswceb1QVrkUHOpw5ZYY'"
+        [formControlName]="'recaptcha'"
+      ></re-captcha>
+    </div>
+
+    <div class="forgot-pass-link">
+      <a [routerLink]="['/login', 'forgot-password']">Forgot Password?</a>
+    </div>
+
+
+    <button type="submit" mat-flat-button [color]="'primary'" [ngStyle]="{
+        width: '100%'
+        }"
+            [disabled]="form.invalid">Login
+    </button>
+
+  </form>
+
+  <div class="bottom-section">
+    <p>Don't have an account yet? <a [routerLink]="['/login', 'register']">Register</a></p>
+  </div>
+
+</div>
+
+
+<div class="error-wrapper" *ngIf="showerror">
+  <div class="left-section">
+    <mat-icon [color]="'warn'">cancel</mat-icon>
+  </div>
+  <div class="right-section">
+    <h3>Error</h3>
+    <p>{{errormsg}}</p>
+  </div>
+</div>

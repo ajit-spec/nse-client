@@ -1,0 +1,34 @@
+<div class="container">
+
+  <div class="logo-wrapper">
+    <button mat-icon-button (click)="openNav.emit()">
+      <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
+    <img src="../../../../assets/images/nse-logo.jpg" alt="NSE India" title="NSE India, National Stock Exchange">
+  </div>
+
+  <nav class="nav-links-wrapper">
+    <a [routerLink]="['/', prop2.getoption(), 'client']" class="nav-link edit-details" mat-button
+       [routerLinkActive]="'active'"
+       [routerLinkActiveOptions]="{exact: true}"
+       [queryParams]="{
+         edit: true
+         }"
+       *ngIf="(prop2.getrtaclientstatusdata()?.status || (prop2.geteditrtadetailsdata()?.approval_status === 'Data Uploaded'))">Edit Details</a>
+    <a [routerLink]="['/', prop2.getoption(), 'client', 'status']" class="nav-link edit-details" mat-button
+       [routerLinkActive]="'active'"
+       *ngIf="(prop2.getrtaclientstatusdata()?.status || (prop2.geteditrtadetailsdata()?.approval_status === 'Data Uploaded'))">Status</a>
+
+    <a [matMenuTriggerFor]="adminName" class="nav-link dropdown" mat-button>
+      <span>{{prop2.getloginuserdata()?.client_name}}</span>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </a>
+    <mat-menu #adminName="matMenu" xPosition="before">
+      <a mat-menu-item class="nav-link" [routerLink]="['/login', 'change-password']">Change
+        Password</a>
+      <a mat-menu-item class="nav-link" (click)="logout()">Logout</a>
+    </mat-menu>
+
+  </nav>
+
+</div>
